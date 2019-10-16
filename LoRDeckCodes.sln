@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoRDeckCodes", "LoRDeckCodes\LoRDeckCodes.csproj", "{AD2E451F-4087-486E-8921-12FD7F4C7FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoRDeckCodes_Tests", "LoRDeckCodes_Tests\LoRDeckCodes_Tests.csproj", "{D634AF78-28A9-49B3-96CB-429EE56A1D12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD2E451F-4087-486E-8921-12FD7F4C7FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2E451F-4087-486E-8921-12FD7F4C7FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2E451F-4087-486E-8921-12FD7F4C7FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2E451F-4087-486E-8921-12FD7F4C7FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D634AF78-28A9-49B3-96CB-429EE56A1D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D634AF78-28A9-49B3-96CB-429EE56A1D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D634AF78-28A9-49B3-96CB-429EE56A1D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D634AF78-28A9-49B3-96CB-429EE56A1D12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03F9630A-71F0-459B-A741-D9D3028925D1}
+	EndGlobalSection
+EndGlobal
