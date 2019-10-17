@@ -14,7 +14,7 @@ def get_deck_from_code(code):
 
     try:
         bytes_ = b32decode(code + ('=' * (56 - len(code))))
-    except:
+    except Exception:
         raise ValueError("Invalid deck code")
 
     byte_list = bytearray(bytes_)
@@ -52,7 +52,7 @@ def get_deck_from_code(code):
     # of entries for cards with counts >= 4.
     # this will only happen in Limited and special game modes.
     # the encoding is simply [count] [cardcode]
-    while len(byte_list) > 0:
+    while byte_list:
         byte_list, four_plus_count = varint_translator.pop_varint(byte_list)
         byte_list, four_plus_set = varint_translator.pop_varint(byte_list)
         byte_list, four_plus_faction = varint_translator.pop_varint(byte_list)
@@ -162,7 +162,7 @@ def parse_card_code(code):
 
 def get_grouped_ofs(list_):
     result = []
-    while len(list_) > 0:
+    while list_:
         current_set = []
 
         # get info from first
