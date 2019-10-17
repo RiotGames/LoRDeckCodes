@@ -9,7 +9,7 @@ public enum LoRFaction
     IONIA("IO", 2),
     NOXUS("NX", 3),
     PILTOVER_AND_ZAUN("PZ", 4),
-    SHADOW_ILES("SI", 5);
+    SHADOW_ISLES("SI", 5);
     
     private String shortCode;
     private int    id;
