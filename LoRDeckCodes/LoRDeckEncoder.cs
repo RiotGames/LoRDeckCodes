@@ -185,7 +185,7 @@ namespace LoRDeckCodes
         //Second by the alphanumeric order of the card codes within those lists.
         private static List<List<CardCodeAndCount>> SortGroupOf(List<List<CardCodeAndCount>> groupOf)
         {
-            groupOf = groupOf.OrderBy(g => g.Count).ToList();
+            groupOf = groupOf.OrderBy(g => g.Count).ThenBy(c => c[0].CardCode).ToList();
             for (int i = 0; i < groupOf.Count; i++)
             {
                 groupOf[i] = groupOf[i].OrderBy(c => c.CardCode).ToList();
