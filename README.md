@@ -1,7 +1,7 @@
 ﻿LoRDeckCodes
 ============
 
-The LorDeckCodes library can be used to encode/decode Legends of Runeterra decks to/from simple strings. Below is an example code for a Demacia/Freljord deck.
+The LorDeckCodes library can be used to encode/decode Legends of Runeterra decks to/from simple strings. Below is an example code for a Ionia/Piltover & Zaun deck.
 ```
 CEAAECABAQJRWHBIFU2DOOYIAEBAMCIMCINCILJZAICACBANE4VCYBABAILR2HRL
 ```
