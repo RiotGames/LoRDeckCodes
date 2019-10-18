@@ -13,7 +13,7 @@ def get_deck_from_code(code):
     result = []
 
     try:
-        while len(code) % 8 != 0:
+        while len(code) % 8:
             code += "="
         bytes_ = b32decode(code)
     except Exception:
@@ -75,7 +75,7 @@ def get_deck_from_code(code):
 
 def get_code_from_deck(deck):
     result = b32encode(get_deck_code_bytes(deck)).replace(b'=', b'')
-    return result
+    return result.decode()  # return a string and not a byte string
 
 
 def get_deck_code_bytes(deck):
@@ -137,7 +137,7 @@ def encode_n_ofs(bytes_, n_ofs):
     for ccc in n_ofs:
         bytes_.extend(varint_translator.get_varint(ccc.count))
 
-        set_number, faction_code, card_number = parse_card_code(ccc)
+        set_number, faction_code, card_number = parse_card_code(ccc.card_code)
         faction_number = faction_to_int[faction_code]
 
         bytes_.extend(varint_translator.get_varint(set_number))
