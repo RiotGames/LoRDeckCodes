@@ -61,5 +61,13 @@ Factions are mapped as follows:
 | 4 | PZ | Piltover & Zaun |
 | 5 | SI | Shadow Isles |
 
+## Implementations
+Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request ](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
+
+| Name                  | Language | Version* | Maintainer |
+| --------------------- | -------- | -------- | ---------- |
+
+*Version refers to the MAX_KNOWN_VERSION supported by the implementation.
+
 ## License
 Apache 2 (see [LICENSE](/LICENSE.txt) for details)
