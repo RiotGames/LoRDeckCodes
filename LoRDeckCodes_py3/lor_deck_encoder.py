@@ -13,7 +13,9 @@ def get_deck_from_code(code):
     result = []
 
     try:
-        bytes_ = b32decode(code + ('=' * (56 - len(code))))
+        while len(code) % 8 != 0:
+            code += "="
+        bytes_ = b32decode(code)
     except Exception:
         raise ValueError("Invalid deck code")
 
