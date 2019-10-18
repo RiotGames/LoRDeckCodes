@@ -66,7 +66,7 @@ Members of the community have graciously created implementations of this library
 
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
-|LoRDeckCodes-J11|Java11|1|stelar7|
+|[LoRDeckCodes-J11](https://github.com/stelar7/LoRDeckCodes)|[Java11](https://openjdk.java.net/)|1|[stelar7](https://github.com/stelar7)|
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
