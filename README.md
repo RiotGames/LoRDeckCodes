@@ -70,6 +70,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 1 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 1 | SwitchbladeBot |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 1 | MarekSalgovic |
+| [PyLoRDeckCodes](https://github.com/Bamiji/PyLoRDeckCodes) | Python 3 | 1 | Bamiji |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
