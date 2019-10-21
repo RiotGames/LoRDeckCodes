@@ -66,11 +66,11 @@ Members of the community have graciously created implementations of this library
 
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
-| [PyLoRDeckCodes](https://github.com/Bamiji/PyLoRDeckCodes) | Python 3 | 1 | Bamiji |
 | [LoRDeckCodes](https://github.com/stelar7/LoRDeckCodes) | Java 8 | 1 | stelar7 |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 1 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 1 | SwitchbladeBot |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 1 | MarekSalgovic |
+| [PyLoRDeckCodes](https://github.com/Bamiji/PyLoRDeckCodes) | Python 3 | 1 | Bamiji |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
