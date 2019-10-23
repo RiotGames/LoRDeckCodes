@@ -72,6 +72,7 @@ Members of the community have graciously created implementations of this library
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 1 | MarekSalgovic |
 | [PyLoRDeckCodes](https://github.com/Bamiji/PyLoRDeckCodes) | Python 3 | 1 | Bamiji |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 1 | Mike-Reinders |
+| [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
