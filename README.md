@@ -74,6 +74,7 @@ Members of the community have graciously created implementations of this library
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 1 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 1 | iulianR |
+| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodes) | Android | 1 | Pole |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
