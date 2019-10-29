@@ -75,7 +75,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 1 | iulianR |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 1 | snowcola |
-| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodes) | Android | 1 | Pole |
+| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 1 | Pole |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
