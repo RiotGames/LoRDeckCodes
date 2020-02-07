@@ -77,6 +77,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 1 | Pole |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 1 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
+| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 1 | edenizk |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
