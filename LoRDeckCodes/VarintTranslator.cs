@@ -35,7 +35,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace LoRDeckCodes
 {
-    public class VarintTranslator
+    public static class VarintTranslator
     {
         private const byte AllButMSB = 0x7f;
         private const byte JustMSB = 0x80;
