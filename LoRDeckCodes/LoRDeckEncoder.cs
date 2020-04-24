@@ -12,7 +12,7 @@ namespace LoRDeckCodes
         private readonly static int CARD_CODE_LENGTH = 7;
         private static Dictionary<string, int> FactionCodeToIntIdentifier = new Dictionary<string, int>();
         private static Dictionary<int, string> IntIdentifierToFactionCode = new Dictionary<int, string>();
-        private readonly static int MAX_KNOWN_VERSION = 1;
+        private readonly static int MAX_KNOWN_VERSION = 2;
 
         static LoRDeckEncoder()
         {
@@ -22,12 +22,14 @@ namespace LoRDeckCodes
             FactionCodeToIntIdentifier.Add("NX", 3);
             FactionCodeToIntIdentifier.Add("PZ", 4);
             FactionCodeToIntIdentifier.Add("SI", 5);
+            FactionCodeToIntIdentifier.Add("BW", 6);
             IntIdentifierToFactionCode.Add(0, "DE");
             IntIdentifierToFactionCode.Add(1, "FR");
             IntIdentifierToFactionCode.Add(2, "IO");
             IntIdentifierToFactionCode.Add(3, "NX");
             IntIdentifierToFactionCode.Add(4, "PZ");
             IntIdentifierToFactionCode.Add(5, "SI");
+            IntIdentifierToFactionCode.Add(6, "BW");
         }
 
         public static List<CardCodeAndCount> GetDeckFromCode(string code)
