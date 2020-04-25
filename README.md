@@ -60,6 +60,7 @@ Factions are mapped as follows:
 | 3 | NX | Noxus |
 | 4 | PZ | Piltover & Zaun |
 | 5 | SI | Shadow Isles |
+| 6 | BW | Bilgewater |
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
