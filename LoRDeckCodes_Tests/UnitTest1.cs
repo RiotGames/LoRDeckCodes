@@ -230,6 +230,20 @@ namespace LoRDeckCodes_Tests
         }
 
         [TestMethod]
+        public void BilgewaterSet()
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE004", Count = 5 });
+
+            string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+            List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+            Assert.IsTrue(VerifyRehydration(deck, decoded));
+        }
+
+        [TestMethod]
         public void BadCardCodes()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
