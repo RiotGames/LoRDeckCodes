@@ -79,7 +79,7 @@ Members of the community have graciously created implementations of this library
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 1 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
-| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 1 | edenizk |
+| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 1 | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 1 | tomaszbak |
 
