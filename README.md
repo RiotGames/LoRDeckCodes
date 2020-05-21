@@ -23,7 +23,12 @@ The deck code library accepts a Legends of Runeterra deck as a list of `CardCode
 ## Process
 Decks are encoding via arranging VarInts into an array and then base 32 encoding into a string.
 
-All encodings begin with 4 bits for format and 4 bits for version. Currently this is only 00010001.
+All encodings begin with 4 bits for format and 4 bits for version.
+
+| Version | About |
+| ------------------ | ------------------ |
+| 1 | Supports all original factions |
+| 2 | Adds support for Bilgewater |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -82,6 +87,7 @@ Members of the community have graciously created implementations of this library
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 1 | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 1 | tomaszbak |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2 | Billzabob |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
