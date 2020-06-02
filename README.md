@@ -81,7 +81,7 @@ Members of the community have graciously created implementations of this library
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 1 | iulianR |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 1 | snowcola |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 1 | Pole |
-| [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 1 | icepeng |
+| [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
