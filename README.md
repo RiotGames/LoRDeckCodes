@@ -88,6 +88,7 @@ Members of the community have graciously created implementations of this library
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 1 | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 1 | tomaszbak |
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2 | Billzabob |
+| [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.
 
