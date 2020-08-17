@@ -244,6 +244,52 @@ namespace LoRDeckCodes_Tests
         }
 
         [TestMethod]
+        public void MtTargonSet()
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "03MT003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "03MT010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW004", Count = 5 });
+
+            string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+            List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+            Assert.IsTrue(VerifyRehydration(deck, decoded));
+        }
+
+        [TestMethod]
+        public void BadVersion() {
+            // make sure that a deck with an invalid version fails
+
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02DE003", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE004", Count = 5 });
+
+            List<byte> bytesFromDeck = Base32.Decode(LoRDeckEncoder.GetCodeFromDeck(deck)).ToList();
+
+            List<byte> result = new List<byte>();
+            byte[] formatAndVersion = new byte[] { 88 }; // arbitrary invalid format/version
+            result.AddRange(formatAndVersion);
+
+            bytesFromDeck.RemoveAt(0); // remove the actual format/version
+            result.Concat(bytesFromDeck); // replace with invalid one
+
+            try
+            {
+                string badVersionDeckCode = Base32.Encode(result.ToArray());
+                List<CardCodeAndCount> deckBad = LoRDeckEncoder.GetDeckFromCode(badVersionDeckCode);
+            }
+            catch (ArgumentException e)
+            {
+                string expectedErrorMessage = "The provided code requires a higher version of this library; please update.";
+                Console.WriteLine(e.Message);
+                Assert.AreEqual(expectedErrorMessage, e.Message);
+            }
+        }
+
+        [TestMethod]
         public void BadCardCodes()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -264,7 +310,7 @@ namespace LoRDeckCodes_Tests
             }
 
             deck = new List<CardCodeAndCount>();
-            deck.Add(new CardCodeAndCount() { CardCode = "01XX002", Count = 1 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01YY002", Count = 1 });
 
             try
             {

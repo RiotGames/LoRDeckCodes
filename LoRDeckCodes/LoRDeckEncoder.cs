@@ -23,6 +23,7 @@ namespace LoRDeckCodes
             FactionCodeToIntIdentifier.Add("PZ", 4);
             FactionCodeToIntIdentifier.Add("SI", 5);
             FactionCodeToIntIdentifier.Add("BW", 6);
+            FactionCodeToIntIdentifier.Add("MT", 9);
             IntIdentifierToFactionCode.Add(0, "DE");
             IntIdentifierToFactionCode.Add(1, "FR");
             IntIdentifierToFactionCode.Add(2, "IO");
@@ -30,6 +31,7 @@ namespace LoRDeckCodes
             IntIdentifierToFactionCode.Add(4, "PZ");
             IntIdentifierToFactionCode.Add(5, "SI");
             IntIdentifierToFactionCode.Add(6, "BW");
+            IntIdentifierToFactionCode.Add(9, "MT"); 
         }
 
         public static List<CardCodeAndCount> GetDeckFromCode(string code)
@@ -117,7 +119,7 @@ namespace LoRDeckCodes
             if (!ValidCardCodesAndCounts(deck))
                 throw new ArgumentException("The provided deck contains invalid card codes.");
 
-            byte[] formatAndVersion = new byte[] { 17 }; //i.e. 00010001
+            byte[] formatAndVersion = new byte[] { 18 }; //i.e. 00010010
             result.AddRange(formatAndVersion);
 
             List<CardCodeAndCount> of3 = new List<CardCodeAndCount>();
