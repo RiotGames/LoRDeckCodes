@@ -29,6 +29,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | ------- | ---- | --------- | ----- |
 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
+| 3 | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -66,6 +67,7 @@ Factions are mapped as follows:
 | 4 | PZ | Piltover & Zaun |
 | 5 | SI | Shadow Isles |
 | 6 | BW | Bilgewater |
+| 9 | MT | Mount Targon |
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
