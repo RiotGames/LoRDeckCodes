@@ -310,7 +310,7 @@ namespace LoRDeckCodes_Tests
             }
 
             deck = new List<CardCodeAndCount>();
-            deck.Add(new CardCodeAndCount() { CardCode = "01YY002", Count = 1 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01XX002", Count = 1 });
 
             try
             {
