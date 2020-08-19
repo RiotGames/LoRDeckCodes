@@ -25,11 +25,11 @@ Decks are encoding via arranging VarInts into an array and then base 32 encoding
 
 All encodings begin with 4 bits for format and 4 bits for version.
 
-| Version | Date | Patch | About |
-| ------- | ---- | --------- | ----- |
-| 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
-| 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
-| 3 | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
+| Format | Version | Date | Patch | About |
+| ------ | ---- | --------- | ----- |
+| 1 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
+| 1 | 1 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
+| 1 | 2 | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
 
 The list of cards are then encoded according to the following scheme:
 
