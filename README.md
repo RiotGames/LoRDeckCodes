@@ -29,9 +29,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | ------ | ------- | ---- | ----- | ----- |
 | 1 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
 | 1 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
-| 1 | * | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
-
-*We'll be bumping the version to 3 shortly after launch. If you would like to create deck codes for set 3 you'll need to create version 2 codes with the Targon region, until version 3 is supported in the client.
+| 1 | 2 | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -95,6 +93,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.  
+**Supports deck code version 2 with the Targon faction.
 
 ## License
 Apache 2 (see [LICENSE](/LICENSE.txt) for details)
