@@ -80,7 +80,7 @@ Members of the community have graciously created implementations of this library
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
-| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2 | iulianR |
+| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2 | snowcola |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 2 | Pole |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
