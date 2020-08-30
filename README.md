@@ -76,7 +76,7 @@ Members of the community have graciously created implementations of this library
 | --------------------- | -------- | -------- | ---------- |
 | [LoRDeckCodes](https://github.com/stelar7/LoRDeckCodes) | Java 8 | 1 | stelar7 |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 2 | Rafalonso |
-| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 2 | SwitchbladeBot |
+| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 2** | SwitchbladeBot |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
@@ -87,9 +87,9 @@ Members of the community have graciously created implementations of this library
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
-| [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2 | exts |
+| [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 1 | tomaszbak |
-| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2 | Billzabob |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2** | Billzabob |
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.  
