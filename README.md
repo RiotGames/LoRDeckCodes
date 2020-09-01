@@ -23,7 +23,13 @@ The deck code library accepts a Legends of Runeterra deck as a list of `CardCode
 ## Process
 Decks are encoding via arranging VarInts into an array and then base 32 encoding into a string.
 
-All encodings begin with 4 bits for format and 4 bits for version. Currently this is only 00010001.
+All encodings begin with 4 bits for format and 4 bits for version.
+
+| Format | Version | Date | Patch | About |
+| ------ | ------- | ---- | ----- | ----- |
+| 1 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
+| 1 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
+| 1 | 2 | August 17th, 2020 | 1.8 | Supports third set with the Targon faction. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -61,6 +67,7 @@ Factions are mapped as follows:
 | 4 | PZ | Piltover & Zaun |
 | 5 | SI | Shadow Isles |
 | 6 | BW | Bilgewater |
+| 9 | MT | Mount Targon |
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
@@ -69,19 +76,24 @@ Members of the community have graciously created implementations of this library
 | --------------------- | -------- | -------- | ---------- |
 | [LoRDeckCodes](https://github.com/stelar7/LoRDeckCodes) | Java 8 | 1 | stelar7 |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 2 | Rafalonso |
-| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 1 | SwitchbladeBot |
-| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 1 | MarekSalgovic |
-| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 1 | Mike-Reinders |
+| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 2** | SwitchbladeBot |
+| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
+| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
-| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 1 | iulianR |
-| [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 1 | snowcola |
-| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 1 | Pole |
-| [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 1 | icepeng |
+| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
+| [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2 | snowcola |
+| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 2 | Pole |
+| [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
-| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 1 | edenizk |
+| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
+| [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
+| [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 1 | tomaszbak |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2** | Billzabob |
+| [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 
-*Version refers to the MAX_KNOWN_VERSION supported by the implementation.
+*Version refers to the MAX_KNOWN_VERSION supported by the implementation.  
+**Supports deck code version 2 with the Targon faction.
 
 ## License
 Apache 2 (see [LICENSE](/LICENSE.txt) for details)
