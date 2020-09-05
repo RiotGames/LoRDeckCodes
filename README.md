@@ -78,7 +78,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 2** | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 2** | SwitchbladeBot |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
-| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2 | Mike-Reinders |
+| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2** | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
