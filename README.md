@@ -82,12 +82,12 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
-| [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2 | snowcola |
+| [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2** | snowcola |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 2 | Pole |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
-| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2 | edenizk |
+| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2** | edenizk |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 2** | tomaszbak |
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2** | Billzabob |
