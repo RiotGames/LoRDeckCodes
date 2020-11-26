@@ -93,6 +93,7 @@ Members of the community have graciously created implementations of this library
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2** | Billzabob |
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 2** | zofrex |
+| [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 2** | SolitudeSF |
 
 *Version refers to the MAX_KNOWN_VERSION supported by the implementation.  
 **Supports deck code version 2 with the Targon faction.
