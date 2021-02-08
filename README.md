@@ -21,7 +21,7 @@ Every Legends of Runeterra card has a corresponding card code. Card codes are se
 The deck code library accepts a Legends of Runeterra deck as a list of `CardCodeAndCount` objects. This is simply the code and an associated integer for the number of occurences of the card in the deck.
 
 ## Process
-Decks are encoding via arranging VarInts into an array and then base 32 encoding into a string.
+Decks are encoding via arranging VarInts (big endian) into an array and then base 32 encoding into a string.
 
 All encodings begin with 4 bits for format and 4 bits for version.
 
@@ -36,7 +36,7 @@ The list of cards are then encoded according to the following scheme:
 1. Cards are grouped together based on how many copies of the card are in the deck (e.g., cards with three copies are grouped together, cards with two copies are grouped together, and cards with a single copy are grouped together).
 1. Within those groups, lists of cards are created which share the same set AND faction.
 1. The set/faction lists are ordered by increasing length. The contents of the set/faction lists are ordered alphanumerically.
-1. Variable length integer ([varints](https://en.wikipedia.org/wiki/Variable-length_quantity)) bytes for each ordered group of cards are written into the byte array according to the following convention:
+1. Variable length integer ([varints](https://en.wikipedia.org/wiki/Variable-length_quantity)) (big endian) bytes for each ordered group of cards are written into the byte array according to the following convention:
     * [how many lists of set/faction combination have three copies of a card]
       * [how many cards within this set/faction combination follow]
       * [set]
