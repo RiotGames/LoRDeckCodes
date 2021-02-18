@@ -121,7 +121,7 @@ namespace LoRDeckCodes
             if (!ValidCardCodesAndCounts(deck))
                 throw new ArgumentException("The provided deck contains invalid card codes.");
 
-            byte[] formatAndVersion = new byte[] { 19 }; //i.e. 00010010
+            byte[] formatAndVersion = new byte[] { 19 }; //i.e. 00010011
             result.AddRange(formatAndVersion);
 
             List<CardCodeAndCount> of3 = new List<CardCodeAndCount>();
