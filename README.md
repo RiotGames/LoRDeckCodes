@@ -67,6 +67,7 @@ Factions are mapped as follows:
 | 4 | PZ | Piltover & Zaun |
 | 5 | SI | Shadow Isles |
 | 6 | BW | Bilgewater |
+| 7 | SH | Shurima |
 | 9 | MT | Mount Targon |
 
 ## Implementations

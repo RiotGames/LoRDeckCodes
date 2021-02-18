@@ -12,7 +12,7 @@ namespace LoRDeckCodes
         private readonly static int CARD_CODE_LENGTH = 7;
         private static Dictionary<string, int> FactionCodeToIntIdentifier = new Dictionary<string, int>();
         private static Dictionary<int, string> IntIdentifierToFactionCode = new Dictionary<int, string>();
-        private readonly static int MAX_KNOWN_VERSION = 2;
+        private readonly static int MAX_KNOWN_VERSION = 3;
 
         static LoRDeckEncoder()
         {
@@ -23,6 +23,7 @@ namespace LoRDeckCodes
             FactionCodeToIntIdentifier.Add("PZ", 4);
             FactionCodeToIntIdentifier.Add("SI", 5);
             FactionCodeToIntIdentifier.Add("BW", 6);
+            FactionCodeToIntIdentifier.Add("SH", 7);
             FactionCodeToIntIdentifier.Add("MT", 9);
             IntIdentifierToFactionCode.Add(0, "DE");
             IntIdentifierToFactionCode.Add(1, "FR");
@@ -31,6 +32,7 @@ namespace LoRDeckCodes
             IntIdentifierToFactionCode.Add(4, "PZ");
             IntIdentifierToFactionCode.Add(5, "SI");
             IntIdentifierToFactionCode.Add(6, "BW");
+            IntIdentifierToFactionCode.Add(7, "SH"); 
             IntIdentifierToFactionCode.Add(9, "MT"); 
         }
 
@@ -119,7 +121,7 @@ namespace LoRDeckCodes
             if (!ValidCardCodesAndCounts(deck))
                 throw new ArgumentException("The provided deck contains invalid card codes.");
 
-            byte[] formatAndVersion = new byte[] { 18 }; //i.e. 00010010
+            byte[] formatAndVersion = new byte[] { 19 }; //i.e. 00010010
             result.AddRange(formatAndVersion);
 
             List<CardCodeAndCount> of3 = new List<CardCodeAndCount>();
