@@ -71,6 +71,8 @@ Factions are mapped as follows:
 | 7 | SH | Shurima | 3 |
 | 9 | MT | Mount Targon | 2** |
 
+**Supports deck code version 2 with the Targon faction.
+
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
 
