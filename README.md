@@ -30,7 +30,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | 1 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
 | 1 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
 | 1 | 2 | August 17th, 2020 | [1.8](https://playruneterra.com/en-us/news/patch-1-8-notes-call-of-the-mountain/) | Supports third set with the Targon faction. |
-| 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | 2.3 | Supports Empires of the Ascended expansion with Shurima faction. |
+| 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | [2.3](https://playruneterra.com/en-us/news/game-updates/patch-2-3-0-notes/) | Supports Empires of the Ascended expansion with Shurima faction. |
 
 The list of cards are then encoded according to the following scheme:
 
