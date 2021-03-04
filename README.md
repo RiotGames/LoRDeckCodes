@@ -30,7 +30,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | 1 | 1 | Oct 18, 2019 | - | Closed alpha. Supports original set. |
 | 1 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
 | 1 | 2 | August 17th, 2020 | [1.8](https://playruneterra.com/en-us/news/patch-1-8-notes-call-of-the-mountain/) | Supports third set with the Targon faction. |
-| 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | 2.3 | Supports Empires of the Ascended expansion with Shurima faction. |
+| 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | [2.3](https://playruneterra.com/en-us/news/game-updates/patch-2-3-0-notes/) | Supports Empires of the Ascended expansion with Shurima faction. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -59,16 +59,19 @@ The list of cards are then encoded according to the following scheme:
 ### Faction Identifiers
 Factions are mapped as follows:
 
-| Integer Identifier | Faction Identifier | Faction Name |
-| ------------------ | ------------------ | ------------ |
-| 0 | DE | Demacia |
-| 1 | FR | Freljord |
-| 2 | IO | Ionia |
-| 3 | NX | Noxus |
-| 4 | PZ | Piltover & Zaun |
-| 5 | SI | Shadow Isles |
-| 6 | BW | Bilgewater |
-| 9 | MT | Mount Targon |
+| Integer Identifier | Faction Identifier | Faction Name | Version |
+| ------------------ | ------------------ | ------------ | ------- |
+| 0 | DE | Demacia | 1 |
+| 1 | FR | Freljord | 1 |
+| 2 | IO | Ionia | 1 |
+| 3 | NX | Noxus | 1 |
+| 4 | PZ | Piltover & Zaun | 1 |
+| 5 | SI | Shadow Isles | 1 |
+| 6 | BW | Bilgewater | 2 |
+| 7 | SH | Shurima | 3 |
+| 9 | MT | Mount Targon | 2** |
+
+**The deck code library remained on version 2 for two set launches; Bilgewater and Mount Targon.
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
@@ -76,10 +79,10 @@ Members of the community have graciously created implementations of this library
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
 | [R4J](https://github.com/stelar7/R4J) | Java 8 | 3 | stelar7 |
-| [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 2** | Rafalonso |
+| [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 3 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 2** | SwitchbladeBot |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
-| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 2** | Mike-Reinders |
+| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
@@ -91,7 +94,7 @@ Members of the community have graciously created implementations of this library
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 2** | edenizk |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 2** | tomaszbak |
-| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 2** | Billzabob |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 3 | Billzabob |
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 2** | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 2** | SolitudeSF |

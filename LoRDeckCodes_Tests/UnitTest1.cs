@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -8,11 +8,10 @@ using LoRDeckCodes;
 
 namespace LoRDeckCodes_Tests
 {
-    [TestClass]
     public class UnitTest1
     {
         //Tests the encoding of a set of hard coded decks in DeckCodesTestData.txt
-        [TestMethod]
+        [Fact]
         public void EncodeDecodeRecommendedDecks()
         {
             List<string> codes = new List<string>();
@@ -20,7 +19,7 @@ namespace LoRDeckCodes_Tests
 
             //Load the test data from file.
             string line;
-            using (StreamReader myReader = new StreamReader("..\\..\\DeckCodesTestData.txt"))
+            using (StreamReader myReader = new StreamReader(GetTestDataFilePath()))
             {
                 while( (line = myReader.ReadLine()) != null)
                 {
@@ -40,15 +39,43 @@ namespace LoRDeckCodes_Tests
             for (int i = 0; i < decks.Count; i++)
             {
                 string encoded = LoRDeckEncoder.GetCodeFromDeck(decks[i]);
-                Assert.AreEqual(codes[i], encoded);
+                Assert.Equal(codes[i], encoded);
 
                 List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(encoded);
-                Assert.IsTrue(VerifyRehydration(decks[i], decoded));
+                Assert.True(VerifyRehydration(decks[i], decoded));
+            }
+        }
+        
+        private static string GetTestDataFilePath()
+        {
+            string TestDataFileName = "DeckCodesTestData.txt";
+            // first test local directory
+            string testPath = TestDataFileName;
+            if (File.Exists(testPath))
+            {
+                return testPath;
+            }
 
+            // then test in executable directory and walk backwards
+            string testDir = AppDomain.CurrentDomain.BaseDirectory;
+            while (true)
+            {
+                testPath = Path.Combine(testDir, TestDataFileName);
+                if (File.Exists(testPath))
+                {
+                    return testPath;
+                }
+
+                DirectoryInfo parentDir = Directory.GetParent(testDir);
+                if (parentDir == null)
+                {
+                    return null;
+                }
+                testDir = parentDir.FullName;
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void SmallDeck()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -56,11 +83,11 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
 
         }
 
-        [TestMethod]
+        [Fact]
         public void LargeDeck()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -87,11 +114,11 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
 
         }
 
-        [TestMethod]
+        [Fact]
         public void DeckWithCountsMoreThan3Small()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -99,10 +126,10 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
         public void DeckWithCountsMoreThan3Large()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -129,10 +156,10 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
         public void SingleCard40Times()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -140,10 +167,10 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
         public void WorstCaseLength()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -170,10 +197,10 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
         public void OrderShouldNotMatter1()
         {
             List<CardCodeAndCount> deck1 = new List<CardCodeAndCount>();
@@ -189,7 +216,7 @@ namespace LoRDeckCodes_Tests
             string code1 = LoRDeckEncoder.GetCodeFromDeck(deck1);
             string code2 = LoRDeckEncoder.GetCodeFromDeck(deck2);
 
-            Assert.AreEqual(code1, code2);
+            Assert.Equal(code1, code2);
 
             List<CardCodeAndCount> deck3 = new List<CardCodeAndCount>();
             deck3.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
@@ -204,10 +231,10 @@ namespace LoRDeckCodes_Tests
             string code3 = LoRDeckEncoder.GetCodeFromDeck(deck1);
             string code4 = LoRDeckEncoder.GetCodeFromDeck(deck2);
 
-            Assert.AreEqual(code3, code4);
+            Assert.Equal(code3, code4);
         }
 
-        [TestMethod]
+        [Fact]
         public void OrderShouldNotMatter2()
         {
             //importantly this order test includes more than 1 card with counts >3, which are sorted by card code and appending to the <=3 encodings.
@@ -226,10 +253,10 @@ namespace LoRDeckCodes_Tests
             string code1 = LoRDeckEncoder.GetCodeFromDeck(deck1);
             string code2 = LoRDeckEncoder.GetCodeFromDeck(deck2);
 
-            Assert.AreEqual(code1, code2);
+            Assert.Equal(code1, code2);
         }
 
-        [TestMethod]
+        [Fact]
         public void BilgewaterSet()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -240,10 +267,24 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
+         public void ShurimaSet()
+         {
+             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+             deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
+             deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
+             deck.Add(new CardCodeAndCount() { CardCode = "04SH047", Count = 5 });
+        
+             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+             Assert.True(VerifyRehydration(deck, decoded));
+         }        
+
+        [Fact]
         public void MtTargonSet()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -254,10 +295,10 @@ namespace LoRDeckCodes_Tests
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-            Assert.IsTrue(VerifyRehydration(deck, decoded));
+            Assert.True(VerifyRehydration(deck, decoded));
         }
 
-        [TestMethod]
+        [Fact]
         public void BadVersion() {
             // make sure that a deck with an invalid version fails
 
@@ -285,146 +326,157 @@ namespace LoRDeckCodes_Tests
             {
                 string expectedErrorMessage = "The provided code requires a higher version of this library; please update.";
                 Console.WriteLine(e.Message);
-                Assert.AreEqual(expectedErrorMessage, e.Message);
+                Assert.Equal(expectedErrorMessage, e.Message);
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void BadCardCodes()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
             deck.Add(new CardCodeAndCount() { CardCode = "01DE02", Count = 1 });
 
+            bool failed = false;
             try
             {
                 string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
+
+            failed = false;
             deck = new List<CardCodeAndCount>();
             deck.Add(new CardCodeAndCount() { CardCode = "01XX002", Count = 1 });
 
+            failed = false;
             try
             {
                 string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
+
+            failed = false;
             deck = new List<CardCodeAndCount>();
             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 0 });
 
             try
             {
                 string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
         }
 
-        [TestMethod]
+        [Fact]
         public void BadCount()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 0 });
+            bool failed = false;
             try
             {
                 string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
+            failed = false;
             deck = new List<CardCodeAndCount>();
             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = -1 });
             try
             {
                 string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
         }
 
 
-        [TestMethod]
+        [Fact]
         public void GarbageDecoding()
         {
             string badEncodingNotBase32 = "I'm no card code!";
             string badEncoding32 = "ABCDEFG";
             string badEncodingEmpty = "";
             
+            bool failed = false;
             try
             {
                 List<CardCodeAndCount> deck = LoRDeckEncoder.GetDeckFromCode(badEncodingNotBase32);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
+            failed = false;
             try
             {
                 List<CardCodeAndCount> deck = LoRDeckEncoder.GetDeckFromCode(badEncoding32);
-                Assert.Fail();
             }
             catch (ArgumentException)
             {
-
+                failed = true;
             }
-            catch
+            catch (Exception e)
             {
-                Assert.Fail();
+                Assert.True(false, $"Expected to throw an ArgumentException, but it threw {e}.");
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
+            failed = false;
             try
             {
                 List<CardCodeAndCount> deck = LoRDeckEncoder.GetDeckFromCode(badEncodingEmpty);
-                Assert.Fail();
             }
             catch
             {
-
+                failed = true;
             }
+            Assert.True(failed, "Expected to throw an ArgumentException, but it succeeded.");
 
         }
 
