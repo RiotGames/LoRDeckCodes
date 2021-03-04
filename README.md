@@ -84,7 +84,7 @@ Members of the community have graciously created implementations of this library
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 1 | iulianR |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2 | snowcola |
-| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 2 | Pole |
+| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [CardGameFr-LoRDeckCode](https://github.com/Yohan-Frmt/CardGameFr-LoRDeckCode) | Ruby | 1 | Yohan-Frmt |
 | [LoRDeckCoder](https://github.com/Paul1365972/LoRDeckCoder) | Java 8 | 1 | Paul1365972 |
