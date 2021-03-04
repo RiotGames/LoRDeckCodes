@@ -59,17 +59,17 @@ The list of cards are then encoded according to the following scheme:
 ### Faction Identifiers
 Factions are mapped as follows:
 
-| Integer Identifier | Faction Identifier | Faction Name |
-| ------------------ | ------------------ | ------------ |
-| 0 | DE | Demacia |
-| 1 | FR | Freljord |
-| 2 | IO | Ionia |
-| 3 | NX | Noxus |
-| 4 | PZ | Piltover & Zaun |
-| 5 | SI | Shadow Isles |
-| 6 | BW | Bilgewater |
-| 7 | SH | Shurima |
-| 9 | MT | Mount Targon |
+| Integer Identifier | Faction Identifier | Faction Name | Version |
+| ------------------ | ------------------ | ------------ | ------- |
+| 0 | DE | Demacia | 1 |
+| 1 | FR | Freljord | 1 |
+| 2 | IO | Ionia | 1 |
+| 3 | NX | Noxus | 1 |
+| 4 | PZ | Piltover & Zaun | 1 |
+| 5 | SI | Shadow Isles | 1 |
+| 6 | BW | Bilgewater | 2 |
+| 7 | SH | Shurima | 3 |
+| 9 | MT | Mount Targon | 2** |
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
