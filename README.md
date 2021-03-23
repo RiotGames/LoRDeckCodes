@@ -85,7 +85,7 @@ Members of the community have graciously created implementations of this library
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 1 | wookay |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
-| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 2** | iulianR |
+| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2** | snowcola |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
