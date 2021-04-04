@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace LoRDeckCodes
 {
     /*
- * Derived from https://github.com/google/google-authenticator-android/blob/master/AuthenticatorApp/src/main/java/com/google/android/apps/authenticator/Base32String.java
+ * Derived from https://github.com/google/google-authenticator-android/blob/master/java/com/google/android/apps/authenticator/util/Base32String.java
  * 
  * Copyright (C) 2016 BravoTango86
  *
@@ -20,14 +23,10 @@ namespace LoRDeckCodes
  * limitations under the License.
  */
 
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-    using System.Text.RegularExpressions;
+
 
     public static class Base32
     {
-
         private static readonly char[] DIGITS;
         private static readonly int MASK;
         private static readonly int SHIFT;
@@ -48,10 +47,10 @@ namespace LoRDeckCodes
             int y;
             if (i == 0) return 32;
             int n = 31;
-            y = i << 16; if (y != 0) { n = n - 16; i = y; }
-            y = i << 8; if (y != 0) { n = n - 8; i = y; }
-            y = i << 4; if (y != 0) { n = n - 4; i = y; }
-            y = i << 2; if (y != 0) { n = n - 2; i = y; }
+            y = i << 16; if (y != 0) { n -= 16; i = y; }
+            y = i << 8; if (y != 0) { n -= 8; i = y; }
+            y = i << 4; if (y != 0) { n -= 4; i = y; }
+            y = i << 2; if (y != 0) { n -= 2; i = y; }
             return n - (int)((uint)(i << 1) >> 31);
         }
 
@@ -113,11 +112,11 @@ namespace LoRDeckCodes
             if (data.Length >= (1 << 28))
             {
                 // The computation below will fail, so don't do it.
-                throw new ArgumentOutOfRangeException("data");
+                throw new ArgumentOutOfRangeException(nameof(data));
             }
 
             int outputLength = (data.Length * 8 + SHIFT - 1) / SHIFT;
-            StringBuilder result = new StringBuilder(outputLength);
+            var result = new StringBuilder(outputLength);
 
             int buffer = data[0];
             int next = 1;
