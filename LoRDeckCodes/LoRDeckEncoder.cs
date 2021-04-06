@@ -108,45 +108,48 @@ namespace LoRDeckCodes
             return result;
         }
 
-        public static string GetCodeFromDeck(List<CardCodeAndCount> deck)
-        {
-            string result = Base32.Encode(GetDeckCodeBytes(deck));
-            return result;
-        }
+        public static string GetCodeFromDeck(List<CardCodeAndCount> deck) => Base32.Encode(GetDeckCodeBytes(deck));
 
         private static byte[] GetDeckCodeBytes(List<CardCodeAndCount> deck)
         {
-            List<byte> result = new List<byte>();
+            var result = new List<byte>();
 
             if (!ValidCardCodesAndCounts(deck))
                 throw new ArgumentException("The provided deck contains invalid card codes.");
 
-            byte[] formatAndVersion = new byte[] { 19 }; //i.e. 00010011
+            var formatAndVersion = new byte[] { 19 }; //i.e. 00010011
             result.AddRange(formatAndVersion);
 
-            List<CardCodeAndCount> of3 = new List<CardCodeAndCount>();
-            List<CardCodeAndCount> of2 = new List<CardCodeAndCount>();
-            List<CardCodeAndCount> of1 = new List<CardCodeAndCount>();
-            List<CardCodeAndCount> ofN = new List<CardCodeAndCount>();
+            var of3 = new List<CardCodeAndCount>();
+            var of2 = new List<CardCodeAndCount>();
+            var of1 = new List<CardCodeAndCount>();
+            var ofN = new List<CardCodeAndCount>();
 
             foreach (CardCodeAndCount ccc in deck)
             {
-                if (ccc.Count == 3)
-                    of3.Add(ccc);
-                else if (ccc.Count == 2)
-                    of2.Add(ccc);
-                else if (ccc.Count == 1)
-                    of1.Add(ccc);
-                else if (ccc.Count < 1)
-                    throw new ArgumentException("Invalid count of " + ccc.Count + " for card " + ccc.CardCode);
-                else
-                    ofN.Add(ccc);
+                switch (ccc.Count)
+                {
+                    case 3:
+                        of3.Add(ccc);
+                        break;
+                    case 2:
+                        of2.Add(ccc);
+                        break;
+                    case 1:
+                        of1.Add(ccc);
+                        break;
+                    case < 1:
+                        throw new ArgumentException("Invalid count of " + ccc.Count + " for card " + ccc.CardCode);
+                    default:
+                        ofN.Add(ccc);
+                        break;
+                }
             }
 
             //build the lists of set and faction combinations within the groups of similar card counts
-            List<List<CardCodeAndCount>> groupedOf3s = GetGroupedOfs(of3);
-            List<List<CardCodeAndCount>> groupedOf2s = GetGroupedOfs(of2);
-            List<List<CardCodeAndCount>> groupedOf1s = GetGroupedOfs(of1);
+            var groupedOf3s = GetGroupedOfs(of3);
+            var groupedOf2s = GetGroupedOfs(of2);
+            var groupedOf1s = GetGroupedOfs(of1);
 
             //to ensure that the same decklist in any order produces the same code, do some sorting
             groupedOf3s = SortGroupOf(groupedOf3s);
@@ -204,13 +207,13 @@ namespace LoRDeckCodes
 
         private static List<List<CardCodeAndCount>> GetGroupedOfs(List<CardCodeAndCount> list)
         {
-            List<List<CardCodeAndCount>> result = new List<List<CardCodeAndCount>>();
+            var result = new List<List<CardCodeAndCount>>();
             while (list.Count > 0)
             {
-                List<CardCodeAndCount> currentSet = new List<CardCodeAndCount>();
+                var currentSet = new List<CardCodeAndCount>();
 
                 //get info from first
-                string firstCardCode = list[0].CardCode;
+                var firstCardCode = list[0].CardCode;
                 ParseCardCode(firstCardCode, out int setNumber, out string factionCode, out int cardNumber);
 
                 //now add that to our new list, remove from old
