@@ -91,26 +91,26 @@ namespace LoRDeckCodes_Tests
         public void LargeDeck()
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
-            deck.Add(new () { CardCode = "01DE002", Count = 3 });
-            deck.Add(new () { CardCode = "01DE003", Count = 3 });
-            deck.Add(new () { CardCode = "01DE004", Count = 3 });
-            deck.Add(new () { CardCode = "01DE005", Count = 3 });
-            deck.Add(new () { CardCode = "01DE006", Count = 3 });
-            deck.Add(new () { CardCode = "01DE007", Count = 3 });
-            deck.Add(new () { CardCode = "01DE008", Count = 3 });
-            deck.Add(new () { CardCode = "01DE009", Count = 3 });
-            deck.Add(new () { CardCode = "01DE010", Count = 3 });
-            deck.Add(new () { CardCode = "01DE011", Count = 3 });
-            deck.Add(new () { CardCode = "01DE012", Count = 3 });
-            deck.Add(new () { CardCode = "01DE013", Count = 3 });
-            deck.Add(new () { CardCode = "01DE014", Count = 3 });
-            deck.Add(new () { CardCode = "01DE015", Count = 3 });
-            deck.Add(new () { CardCode = "01DE016", Count = 3 });
-            deck.Add(new () { CardCode = "01DE017", Count = 3 });
-            deck.Add(new () { CardCode = "01DE018", Count = 3 });
-            deck.Add(new () { CardCode = "01DE019", Count = 3 });
-            deck.Add(new () { CardCode = "01DE020", Count = 3 });
-            deck.Add(new () { CardCode = "01DE021", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE003", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE004", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE005", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE006", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE007", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE008", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE009", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE011", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE012", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE013", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE014", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE015", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE016", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE017", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE018", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE019", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE020", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE021", Count = 3 });
 
             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
@@ -228,8 +228,8 @@ namespace LoRDeckCodes_Tests
             deck4.Add(new CardCodeAndCount() { CardCode = "02DE003", Count = 3 });
             deck4.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
 
-            string code3 = LoRDeckEncoder.GetCodeFromDeck(deck1);
-            string code4 = LoRDeckEncoder.GetCodeFromDeck(deck2);
+            string code3 = LoRDeckEncoder.GetCodeFromDeck(deck3);
+            string code4 = LoRDeckEncoder.GetCodeFromDeck(deck4);
 
             Assert.Equal(code3, code4);
         }

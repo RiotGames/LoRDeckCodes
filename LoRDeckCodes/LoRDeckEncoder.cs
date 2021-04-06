@@ -9,38 +9,44 @@ namespace LoRDeckCodes
 {
     public class LoRDeckEncoder
     {
-        private readonly static int CARD_CODE_LENGTH = 7;
-        private static Dictionary<string, int> FactionCodeToIntIdentifier = new Dictionary<string, int>();
-        private static Dictionary<int, string> IntIdentifierToFactionCode = new Dictionary<int, string>();
-        private readonly static int MAX_KNOWN_VERSION = 3;
+        private static readonly int CARD_CODE_LENGTH = 7;
+        private static Dictionary<string, int> FactionCodeToIntIdentifier;
+        private static Dictionary<int, string> IntIdentifierToFactionCode;
+        private static readonly int MAX_KNOWN_VERSION = 3;
 
         static LoRDeckEncoder()
         {
-            FactionCodeToIntIdentifier.Add("DE", 0);
-            FactionCodeToIntIdentifier.Add("FR", 1);
-            FactionCodeToIntIdentifier.Add("IO", 2);
-            FactionCodeToIntIdentifier.Add("NX", 3);
-            FactionCodeToIntIdentifier.Add("PZ", 4);
-            FactionCodeToIntIdentifier.Add("SI", 5);
-            FactionCodeToIntIdentifier.Add("BW", 6);
-            FactionCodeToIntIdentifier.Add("SH", 7);
-            FactionCodeToIntIdentifier.Add("MT", 9);
-            IntIdentifierToFactionCode.Add(0, "DE");
-            IntIdentifierToFactionCode.Add(1, "FR");
-            IntIdentifierToFactionCode.Add(2, "IO");
-            IntIdentifierToFactionCode.Add(3, "NX");
-            IntIdentifierToFactionCode.Add(4, "PZ");
-            IntIdentifierToFactionCode.Add(5, "SI");
-            IntIdentifierToFactionCode.Add(6, "BW");
-            IntIdentifierToFactionCode.Add(7, "SH"); 
-            IntIdentifierToFactionCode.Add(9, "MT"); 
+            FactionCodeToIntIdentifier = new()
+            {
+                {"DE", 0},
+                {"FR", 1},
+                {"IO", 2},
+                {"NX", 3},
+                {"PZ", 4},
+                {"SI", 5},
+                {"BW", 6},
+                {"SH", 7},
+                {"MT", 9},
+            };
+            IntIdentifierToFactionCode = new()
+            {
+                {0, "DE"},
+                {1, "FR"},
+                {2, "IO"},
+                {3, "NX"},
+                {4, "PZ"},
+                {5, "SI"},
+                {6, "BW"},
+                {7, "SH"},
+                {9, "MT"}
+            };
         }
 
         public static List<CardCodeAndCount> GetDeckFromCode(string code)
         {
-            List<CardCodeAndCount> result = new List<CardCodeAndCount>();
+            var result = new List<CardCodeAndCount>();
 
-            byte[] bytes = null;
+            byte[] bytes;
             try
             {
                 bytes = Base32.Decode(code);
@@ -50,11 +56,11 @@ namespace LoRDeckCodes
                 throw new ArgumentException("Invalid deck code");
             }
 
-            List<byte> byteList = bytes.ToList();
+            var byteList = bytes.ToList();
 
             //grab format and version
-            int format = bytes[0] >> 4;
-            int version = bytes[0] & 0xF;
+            var format = bytes[0] >> 4;
+            var version = bytes[0] & 0xF;
             byteList.RemoveAt(0);
 
             if (version > MAX_KNOWN_VERSION)
@@ -62,25 +68,25 @@ namespace LoRDeckCodes
                 throw new ArgumentException("The provided code requires a higher version of this library; please update.");
             }
 
-            for (int i = 3; i > 0; i--)
+            for (var i = 3; i > 0; i--)
             {
-                int numGroupOfs = VarintTranslator.PopVarint(byteList);
+                var numGroupOfs = VarintTranslator.PopVarint(byteList);
 
-                for (int j = 0; j < numGroupOfs; j++)
+                for (var j = 0; j < numGroupOfs; j++)
                 {
-                    int numOfsInThisGroup = VarintTranslator.PopVarint(byteList);
-                    int set = VarintTranslator.PopVarint(byteList);
-                    int faction = VarintTranslator.PopVarint(byteList);
+                    var numOfsInThisGroup = VarintTranslator.PopVarint(byteList);
+                    var set = VarintTranslator.PopVarint(byteList);
+                    var faction = VarintTranslator.PopVarint(byteList);
 
-                    for (int k = 0; k < numOfsInThisGroup; k++)
+                    for (var k = 0; k < numOfsInThisGroup; k++)
                     {
-                        int card = VarintTranslator.PopVarint(byteList);
+                        var card = VarintTranslator.PopVarint(byteList);
 
-                        string setString = set.ToString().PadLeft(2, '0');
-                        string factionString = IntIdentifierToFactionCode[faction];
-                        string cardString = card.ToString().PadLeft(3, '0');
+                        var setString = set.ToString().PadLeft(2, '0');
+                        var factionString = IntIdentifierToFactionCode[faction];
+                        var cardString = card.ToString().PadLeft(3, '0');
 
-                        CardCodeAndCount newEntry = new CardCodeAndCount() { CardCode = setString + factionString + cardString, Count = i };
+                        var newEntry = new CardCodeAndCount() { CardCode = setString + factionString + cardString, Count = i };
                         result.Add(newEntry);
                     }
 
@@ -92,16 +98,16 @@ namespace LoRDeckCodes
             //the encoding is simply [count] [cardcode]
             while (byteList.Count > 0)
             {
-                int fourPlusCount = VarintTranslator.PopVarint(byteList);
-                int fourPlusSet = VarintTranslator.PopVarint(byteList);
-                int fourPlusFaction = VarintTranslator.PopVarint(byteList);
-                int fourPlusNumber = VarintTranslator.PopVarint(byteList);
+                var fourPlusCount = VarintTranslator.PopVarint(byteList);
+                var fourPlusSet = VarintTranslator.PopVarint(byteList);
+                var fourPlusFaction = VarintTranslator.PopVarint(byteList);
+                var fourPlusNumber = VarintTranslator.PopVarint(byteList);
 
-                string fourPlusSetString = fourPlusSet.ToString().PadLeft(2, '0');
-                string fourPlusFactionString = IntIdentifierToFactionCode[fourPlusFaction];
-                string fourPlusNumberString = fourPlusNumber.ToString().PadLeft(3, '0');
+                var fourPlusSetString = fourPlusSet.ToString().PadLeft(2, '0');
+                var fourPlusFactionString = IntIdentifierToFactionCode[fourPlusFaction];
+                var fourPlusNumberString = fourPlusNumber.ToString().PadLeft(3, '0');
 
-                CardCodeAndCount newEntry = new CardCodeAndCount() { CardCode = fourPlusSetString + fourPlusFactionString + fourPlusNumberString, Count = fourPlusCount };
+                var newEntry = new CardCodeAndCount() { CardCode = fourPlusSetString + fourPlusFactionString + fourPlusNumberString, Count = fourPlusCount };
                 result.Add(newEntry);
             }
 
@@ -125,7 +131,7 @@ namespace LoRDeckCodes
             var of1 = new List<CardCodeAndCount>();
             var ofN = new List<CardCodeAndCount>();
 
-            foreach (CardCodeAndCount ccc in deck)
+            foreach (var ccc in deck)
             {
                 switch (ccc.Count)
                 {
@@ -172,12 +178,12 @@ namespace LoRDeckCodes
 
         private static void EncodeNOfs(List<byte> bytes, List<CardCodeAndCount> nOfs)
         {
-            foreach (CardCodeAndCount ccc in nOfs)
+            foreach (var ccc in nOfs)
             {
                 bytes.AddRange(VarintTranslator.GetVarint(ccc.Count));
 
                 ParseCardCode(ccc.CardCode, out int setNumber, out string factionCode, out int cardNumber);
-                int factionNumber = FactionCodeToIntIdentifier[factionCode];
+                var factionNumber = FactionCodeToIntIdentifier[factionCode];
 
                 bytes.AddRange(VarintTranslator.GetVarint(setNumber));
                 bytes.AddRange(VarintTranslator.GetVarint(factionNumber));
@@ -190,12 +196,12 @@ namespace LoRDeckCodes
         //Second by the alphanumeric order of the card codes within those lists.
         private static List<List<CardCodeAndCount>> SortGroupOf(List<List<CardCodeAndCount>> groupOf)
         {
-            groupOf = groupOf.OrderBy(g => g.Count).ThenBy(c => c[0].CardCode).ToList();
-            for (int i = 0; i < groupOf.Count; i++)
-            {
-                groupOf[i] = groupOf[i].OrderBy(c => c.CardCode).ToList();
-            }
-            return groupOf;
+            return groupOf
+                .OrderBy(g => g.Count)
+                .ThenBy(c => c[0].CardCode)
+                .Select(cardsByFact => cardsByFact
+                    .OrderBy(c => c.CardCode).ToList())
+                .ToList();
         }
 
         private static void ParseCardCode(string code, out int set, out string faction, out int number)
@@ -214,19 +220,17 @@ namespace LoRDeckCodes
 
                 //get info from first
                 var firstCardCode = list[0].CardCode;
-                ParseCardCode(firstCardCode, out int setNumber, out string factionCode, out int cardNumber);
-
+                ParseCardCode(firstCardCode, out int setNumber, out string factionCode, out _);
                 //now add that to our new list, remove from old
                 currentSet.Add(list[0]);
                 list.RemoveAt(0);
 
                 //sweep through rest of list and grab entries that should live with our first one.
                 //matching means same set and faction - we are already assured the count matches from previous grouping.
-                for (int i = list.Count - 1; i >= 0; i--)
+                for (var i = list.Count - 1; i >= 0; i--)
                 {
-                    string currentCardCode = list[i].CardCode;
-                    int currentSetNumber = int.Parse(currentCardCode.Substring(0, 2));
-                    string currentFactionCode = currentCardCode.Substring(2, 2);
+                    var currentCardCode = list[i].CardCode;
+                    ParseCardCode(currentCardCode, out var currentSetNumber, out var currentFactionCode, out _);
 
                     if (currentSetNumber == setNumber && currentFactionCode == factionCode)
                     {
@@ -242,44 +246,43 @@ namespace LoRDeckCodes
         private static void EncodeGroupOf(List<byte> bytes, List<List<CardCodeAndCount>> groupOf)
         {
             bytes.AddRange(VarintTranslator.GetVarint(groupOf.Count));
-            foreach (List<CardCodeAndCount> currentList in groupOf)
+            foreach (var currentList in groupOf)
             {
                 //how many cards in current group?
                 bytes.AddRange(VarintTranslator.GetVarint(currentList.Count));
 
                 //what is this group, as identified by a set and faction pair
-                string currentCardCode = currentList[0].CardCode;
-                ParseCardCode(currentCardCode, out int currentSetNumber, out string currentFactionCode, out int _);
-                int currentFactionNumber = FactionCodeToIntIdentifier[currentFactionCode];
+                var currentCardCode = currentList[0].CardCode;
+                ParseCardCode(currentCardCode, out var currentSetNumber, out var currentFactionCode, out int _);
+                var currentFactionNumber = FactionCodeToIntIdentifier[currentFactionCode];
                 bytes.AddRange(VarintTranslator.GetVarint(currentSetNumber));
                 bytes.AddRange(VarintTranslator.GetVarint(currentFactionNumber));
 
                 //what are the cards, as identified by the third section of card code only now, within this group?
-                foreach (CardCodeAndCount cd in currentList)
+                foreach (var cd in currentList)
                 {
-                    string code = cd.CardCode;
-                    int sequenceNumber = int.Parse(code.Substring(4, 3));
+                    var code = cd.CardCode;
+                    var sequenceNumber = int.Parse(code.Substring(4, 3));
                     bytes.AddRange(VarintTranslator.GetVarint(sequenceNumber));
                 }
             }
         }
 
-        public static bool ValidCardCodesAndCounts(List<CardCodeAndCount> deck)
+        private static bool ValidCardCodesAndCounts(List<CardCodeAndCount> deck)
         {
-            foreach (CardCodeAndCount ccc in deck)
+            foreach (var ccc in deck)
             {
                 if (ccc.CardCode.Length != CARD_CODE_LENGTH)
                     return false;
-
-                int parsed;
-                if (!int.TryParse(ccc.CardCode.Substring(0, 2), out parsed))
+                
+                if (!int.TryParse(ccc.CardCode.Substring(0, 2), out _))
                     return false;
 
-                string faction = ccc.CardCode.Substring(2, 2);
+                var faction = ccc.CardCode.Substring(2, 2);
                 if (!FactionCodeToIntIdentifier.ContainsKey(faction))
                     return false;
 
-                if (!int.TryParse(ccc.CardCode.Substring(4, 3), out parsed))
+                if (!int.TryParse(ccc.CardCode.Substring(4, 3), out _))
                     return false;
 
                 if (ccc.Count < 1)
