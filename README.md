@@ -88,6 +88,7 @@ Members of the community have graciously created implementations of this library
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 3 | Billzabob |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 3 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 3 | SolitudeSF |
+| [LoRMasterTracker](https://github.com/shaobaili3/LoR_Master) | Python 3 | 1 | Storm |
 
 ### Older Versions
 
