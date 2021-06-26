@@ -228,8 +228,8 @@ namespace LoRDeckCodes_Tests
             deck4.Add(new CardCodeAndCount() { CardCode = "02DE003", Count = 3 });
             deck4.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
 
-            string code3 = LoRDeckEncoder.GetCodeFromDeck(deck1);
-            string code4 = LoRDeckEncoder.GetCodeFromDeck(deck2);
+            string code3 = LoRDeckEncoder.GetCodeFromDeck(deck3);
+            string code4 = LoRDeckEncoder.GetCodeFromDeck(deck4);
 
             Assert.Equal(code3, code4);
         }
@@ -315,7 +315,7 @@ namespace LoRDeckCodes_Tests
             result.AddRange(formatAndVersion);
 
             bytesFromDeck.RemoveAt(0); // remove the actual format/version
-            result.Concat(bytesFromDeck); // replace with invalid one
+            result.AddRange(bytesFromDeck); // replace with invalid one
 
             try
             {
