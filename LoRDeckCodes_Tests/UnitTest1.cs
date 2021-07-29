@@ -480,6 +480,43 @@ namespace LoRDeckCodes_Tests
 
         }
 
+        [Theory]
+        [InlineData("DE", 1)]
+        [InlineData("FR", 1)]
+        [InlineData("IO", 1)]
+        [InlineData("NX", 1)]
+        [InlineData("PZ", 1)]
+        [InlineData("SI", 1)]
+        [InlineData("BW", 2)]
+        [InlineData("MT", 2)]
+        [InlineData("SH", 3)]
+        [InlineData("BC", 4)]
+        public void DeckVersionIsTheMinimumLibraryVersionThatSupportsTheContainedFactions(string faction, int expectedVersion)
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE001", Count = 1 });
+            deck.Add(new CardCodeAndCount() { CardCode = $"01{faction}002", Count = 1 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01FR001", Count = 1 });
+            string deckCode = LoRDeckEncoder.GetCodeFromDeck(deck);
+
+            int minSupportedLibraryVersion = ExtractVersionFromDeckCode(deckCode);
+
+            Assert.Equal(expectedVersion, minSupportedLibraryVersion);
+        }
+
+        private static int ExtractVersionFromDeckCode(string deckCode)
+        {
+            byte[] bytes = Base32.Decode(deckCode);
+            return bytes[0] & 0xF;
+        }
+
+        [Fact]
+        public void ArgumentExceptionOnFutureVersion()
+        {
+            const string singleCardDeckWithVersion5 = "CUAAAAIBAUAAC";
+            Assert.Throws<ArgumentException>(() => LoRDeckEncoder.GetDeckFromCode(singleCardDeckWithVersion5));
+        }
+
         public bool VerifyRehydration(List<CardCodeAndCount> d, List<CardCodeAndCount> rehydratedList)
         {
             if (d.Count != rehydratedList.Count)
