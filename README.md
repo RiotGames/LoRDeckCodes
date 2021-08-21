@@ -79,7 +79,7 @@ Members of the community have graciously created implementations of this library
 
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
-| [R4J](https://github.com/stelar7/R4J) | Java 8 | 3 | stelar7 |
+| [R4J](https://github.com/stelar7/R4J) | Java 8 | 4 | stelar7 |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 3 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 3 | SwitchbladeBot |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
