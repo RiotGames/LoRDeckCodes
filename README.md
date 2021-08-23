@@ -31,6 +31,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | 1 | 2 | April 28, 2020 | [1.0](https://playruneterra.com/en-us/news/patch-1-0-notes/) | Launch. Supports second set with the Bilgewater faction. |
 | 1 | 2 | August 17th, 2020 | [1.8](https://playruneterra.com/en-us/news/patch-1-8-notes-call-of-the-mountain/) | Supports third set with the Targon faction. |
 | 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | [2.3](https://playruneterra.com/en-us/news/game-updates/patch-2-3-0-notes/) | Supports Empires of the Ascended expansion with Shurima faction. |
+| 1 | 4 | [August 25, 2021](https://twitter.com/PlayRuneterra/status/1425487172589604865) | 2.14 | Supports Beyond the Bandlewood expansion with Bandle City faction and an update to the deck code library which will create the lowest version code required based on the cards in the deck. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -86,7 +87,7 @@ Members of the community have graciously created implementations of this library
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
-| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 3 | Billzabob |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 4 | Billzabob |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 3 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 3 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 3 | jcuker |
