@@ -91,7 +91,7 @@ Members of the community have graciously created implementations of this library
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 3 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 3 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 3 | jcuker |
-| [lordecks](https://github.com/pholzmgit/lordecks) | R | 3 | pholzmgit |
+| [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
 
 ### Older Versions
 
