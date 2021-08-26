@@ -90,7 +90,7 @@ Members of the community have graciously created implementations of this library
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 4 | Billzabob |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 4 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 3 | SolitudeSF |
-| [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 3 | jcuker |
+| [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 4 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
