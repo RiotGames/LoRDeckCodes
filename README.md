@@ -92,6 +92,7 @@ Members of the community have graciously created implementations of this library
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 3 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 4 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
+| [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
 
