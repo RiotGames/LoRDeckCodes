@@ -22,7 +22,7 @@ namespace LoRDeckCodes_Tests
             string line;
             using (StreamReader myReader = new StreamReader(GetTestDataFilePath()))
             {
-                while( (line = myReader.ReadLine()) != null)
+                while ((line = myReader.ReadLine()) != null)
                 {
                     codes.Add(line);
                     List<CardCodeAndCount> newDeck = new List<CardCodeAndCount>();
@@ -46,7 +46,7 @@ namespace LoRDeckCodes_Tests
                 Assert.True(VerifyRehydration(decks[i], decoded));
             }
         }
-        
+
         private static string GetTestDataFilePath()
         {
             string TestDataFileName = "DeckCodesTestData.txt";
@@ -272,18 +272,18 @@ namespace LoRDeckCodes_Tests
         }
 
         [Fact]
-         public void ShurimaSet()
-         {
-             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
-             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
-             deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
-             deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
-             deck.Add(new CardCodeAndCount() { CardCode = "04SH047", Count = 5 });
-        
-             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-             Assert.True(VerifyRehydration(deck, decoded));
-         }        
+        public void ShurimaSet()
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "04SH047", Count = 5 });
+
+            string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+            List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+            Assert.True(VerifyRehydration(deck, decoded));
+        }
 
         [Fact]
         public void MtTargonSet()
@@ -314,7 +314,8 @@ namespace LoRDeckCodes_Tests
         }
 
         [Fact]
-        public void BadVersion() {
+        public void BadVersion()
+        {
             // make sure that a deck with an invalid version fails
 
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -451,7 +452,7 @@ namespace LoRDeckCodes_Tests
             string badEncodingNotBase32 = "I'm no card code!";
             string badEncoding32 = "ABCDEFG";
             string badEncodingEmpty = "";
-            
+
             bool failed = false;
             try
             {
