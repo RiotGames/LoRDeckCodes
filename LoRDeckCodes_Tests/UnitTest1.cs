@@ -556,5 +556,59 @@ namespace LoRDeckCodes_Tests
             }
             return true;
         }
+
+        [Theory]
+        [MemberData(nameof(VarintValidSequences))]
+        public void VarintPopSuccessfully(List<byte> input, int expected)
+        {
+            var actual = VarintTranslator.PopVarint(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [MemberData(nameof(VarintValidSequences))]
+        public void VarintGetValid(List<byte> expectedList, ulong input)
+        {
+            var actual = VarintTranslator.GetVarint(input);
+            byte[] expected = expectedList.ToArray();
+            Assert.Equal(expected, actual);
+        }
+
+        public static IEnumerable<object[]> VarintValidSequences()
+        {
+            /*
+             * Examples sourced from:
+             * https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128
+             * https://developers.google.com/protocol-buffers/docs/encoding#varints
+             */
+            return new List<object[]>
+            {
+                new object[] { new List<byte>() { 0 }, 0 },
+                new object[] { new List<byte>() { 1 }, 1 },
+                new object[] { new List<byte>() { 127 }, 127 },
+                new object[] { new List<byte>() { 128, 1 }, 128 },
+                new object[] { new List<byte>() { 156, 1 }, 156 },
+                new object[] { new List<byte>() { 172, 2 }, 300 },
+                new object[] { new List<byte>() { 229, 142, 38 }, 624485 },
+
+            };
+        }
+
+        [Theory]
+        [MemberData(nameof(VarintInvalidSequences))]
+        public void VarintPopException(List<byte> input)
+        {
+            var ex = Assert.Throws<ArgumentException>(() => VarintTranslator.PopVarint(input));
+            Assert.Equal("Byte array did not contain valid varints.", ex.Message);
+        }
+
+        public static IEnumerable<object[]> VarintInvalidSequences()
+        {
+            return new List<object[]>
+            {
+                new object[] { new List<byte>() { 128 } },
+                new object[] { new List<byte>() { 128, 128 }}
+            };
+        }
     }
 }
