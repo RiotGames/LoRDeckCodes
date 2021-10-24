@@ -3,7 +3,7 @@ LoRDeckCodes
 
 The LorDeckCodes library can be used to encode/decode Legends of Runeterra decks to/from simple strings. Below is an example code for a Ionia/Piltover & Zaun deck.
 ```
-CEAAECABAQJRWHBIFU2DOOYIAEBAMCIMCINCILJZAICACBANE4VCYBABAILR2HRL
+CEAAECABAIDASDASDISC2OIIAECBGGY4FAWTINZ3AICACAQXDUPCWBABAQGSOKRM
 ```
 These strings can be used to share decks across Legends of Runeterra clients. Just remember: you can't netdeck skill.
 
