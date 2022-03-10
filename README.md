@@ -94,6 +94,7 @@ Members of the community have graciously created implementations of this library
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
 | [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
+| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 4 | MarekSalgovic |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
 
@@ -104,7 +105,6 @@ Leading up to the release of a new version of the library, we'll keep the origin
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 3 | wookay |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2** | snowcola |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
-| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
