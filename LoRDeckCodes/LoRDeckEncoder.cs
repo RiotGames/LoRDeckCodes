@@ -9,14 +9,14 @@ namespace LoRDeckCodes
 {
     public class LoRDeckEncoder
     {
-        private readonly static int CARD_CODE_LENGTH = 7;
-        private static Dictionary<string, int> FactionCodeToIntIdentifier = new Dictionary<string, int>();
-        private static Dictionary<int, string> IntIdentifierToFactionCode = new Dictionary<int, string>();
-        private static readonly Dictionary<string, int> FactionCodeToLibraryVersion = new Dictionary<string, int>();
-        private readonly static int MAX_KNOWN_VERSION = 4;
-        private readonly static int FORMAT = 1;
-        private readonly static int INITIAL_VERSION = 1;
+        private const int InitialVersion = 1;
+        private const int MaxKnownVersion = 5;
+        private const int Format = 1;
+        private const int CardCodeLength = 7;
 
+        private static readonly Dictionary<string, int> FactionCodeToIntIdentifier = new Dictionary<string, int>();
+        private static readonly Dictionary<int, string> IntIdentifierToFactionCode = new Dictionary<int, string>();
+        private static readonly Dictionary<string, int> FactionCodeToLibraryVersion = new Dictionary<string, int>();
 
         static LoRDeckEncoder()
         {
@@ -36,6 +36,7 @@ namespace LoRDeckCodes
             FactionCodeToIntIdentifier.Add("SH", 7);
             FactionCodeToIntIdentifier.Add("MT", 9);
             FactionCodeToIntIdentifier.Add("BC", 10);
+            FactionCodeToIntIdentifier.Add("RU", 12);
             IntIdentifierToFactionCode.Add(0, "DE");
             IntIdentifierToFactionCode.Add(1, "FR");
             IntIdentifierToFactionCode.Add(2, "IO");
@@ -46,6 +47,7 @@ namespace LoRDeckCodes
             IntIdentifierToFactionCode.Add(7, "SH"); 
             IntIdentifierToFactionCode.Add(9, "MT"); 
             IntIdentifierToFactionCode.Add(10, "BC");
+            IntIdentifierToFactionCode.Add(12, "RU");
         }
         private static void PopulateFactionLibraryVersions()
         {
@@ -59,6 +61,7 @@ namespace LoRDeckCodes
             FactionCodeToLibraryVersion.Add("MT", 2);
             FactionCodeToLibraryVersion.Add("SH", 3);
             FactionCodeToLibraryVersion.Add("BC", 4);
+            FactionCodeToLibraryVersion.Add("RU", 5);
         }
 
         public static List<CardCodeAndCount> GetDeckFromCode(string code)
@@ -82,7 +85,7 @@ namespace LoRDeckCodes
             int version = bytes[0] & 0xF;
             byteList.RemoveAt(0);
 
-            if (version > MAX_KNOWN_VERSION)
+            if (version > MaxKnownVersion)
             {
                 throw new ArgumentException("The provided code requires a higher version of this library; please update.");
             }
@@ -146,7 +149,7 @@ namespace LoRDeckCodes
             if (!ValidCardCodesAndCounts(deck))
                 throw new ArgumentException("The provided deck contains invalid card codes.");
 
-            byte formatAndVersion = (byte)(FORMAT << 4 | (GetMinSupportedLibraryVersion(deck) & 0xF));
+            byte formatAndVersion = (byte)(Format << 4 | (GetMinSupportedLibraryVersion(deck) & 0xF));
 
             result.Add(formatAndVersion);
 
@@ -196,12 +199,12 @@ namespace LoRDeckCodes
         {
             if (!deck.Any())
             {
-                return INITIAL_VERSION;
+                return InitialVersion;
             }
 
             return deck
                 .Select(ccc => ccc.CardCode.Substring(2,2))
-                .Select(factionCode => FactionCodeToLibraryVersion.TryGetValue(factionCode, out var version) ? version : MAX_KNOWN_VERSION)
+                .Select(factionCode => FactionCodeToLibraryVersion.TryGetValue(factionCode, out var version) ? version : MaxKnownVersion)
                 .Max();
         }
 
@@ -303,7 +306,7 @@ namespace LoRDeckCodes
         {
             foreach (CardCodeAndCount ccc in deck)
             {
-                if (ccc.CardCode.Length != CARD_CODE_LENGTH)
+                if (ccc.CardCode.Length != CardCodeLength)
                     return false;
 
                 int parsed;
