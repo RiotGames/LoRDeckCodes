@@ -32,6 +32,7 @@ All encodings begin with 4 bits for format and 4 bits for version.
 | 1 | 2 | August 17th, 2020 | [1.8](https://playruneterra.com/en-us/news/patch-1-8-notes-call-of-the-mountain/) | Supports third set with the Targon faction. |
 | 1 | 3 | [March 3rd, 2021](https://twitter.com/PlayRuneterra/status/1362446783645945858) | [2.3](https://playruneterra.com/en-us/news/game-updates/patch-2-3-0-notes/) | Supports Empires of the Ascended expansion with Shurima faction. |
 | 1 | 4 | [August 25, 2021](https://twitter.com/PlayRuneterra/status/1425487172589604865) | [2.14](https://playruneterra.com/en-us/news/game-updates/patch-2-14-0-notes/) | Supports Beyond the Bandlewood expansion with Bandle City faction and an update to the deck code library which will create the lowest version code required based on the cards in the deck. |
+| 1 | 5 | [May 25th, 2022](https://twitter.com/PlayRuneterra/status/1525151384328454145) | -- | Supports Worldwalker expansion with Runeterra faction. |
 
 The list of cards are then encoded according to the following scheme:
 
@@ -72,6 +73,7 @@ Factions are mapped as follows:
 | 2 | 9 | MT | Mount Targon |
 | 3 | 7 | SH | Shurima |
 | 4 | 10 | BC | Bandle City |
+| 5 | 12 | RU | Runeterra |
 
 ## Implementations
 Members of the community have graciously created implementations of this library in various languages. The following is intended to assist in choosing the implementation that works best for you. If you're a developer and would like to include your implementation in this list, please create a [pull request](https://github.com/RiotGames/LoRDeckCodes/pulls) and add a row to the README.
