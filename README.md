@@ -96,6 +96,7 @@ Members of the community have graciously created implementations of this library
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
 | [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
+| [runeterra-deck-code](https://github.com/Yutsa/runeterra-deck-code) | Java | 4 | Yutsa |
 | [riot_lor](https://github.com/ed-flanagan/riot_lor) | Elixir | 4 | ed-flanagan |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
