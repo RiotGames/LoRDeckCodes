@@ -83,13 +83,13 @@ Members of the community have graciously created implementations of this library
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
 | [R4J](https://github.com/stelar7/R4J) | Java 8 | 5 | stelar7 |
+| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 5 | Billzabob |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 4 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 3 | SwitchbladeBot |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
-| [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 4 | Billzabob |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 4 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 4 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 4 | jcuker |
