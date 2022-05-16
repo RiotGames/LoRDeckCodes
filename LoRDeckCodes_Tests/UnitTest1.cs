@@ -3,7 +3,6 @@ using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using Newtonsoft.Json;
 using LoRDeckCodes;
 
 namespace LoRDeckCodes_Tests
@@ -299,6 +298,20 @@ namespace LoRDeckCodes_Tests
         }
 
         [Fact]
+        public void RuneterraSet()
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "03MT003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "03MT010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "01RU001", Count = 5 });
+
+            string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+            List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+            Assert.True(VerifyRehydration(deck, decoded));
+        }
+
+        [Fact]
         public void BadVersion() {
             // make sure that a deck with an invalid version fails
 
@@ -491,6 +504,7 @@ namespace LoRDeckCodes_Tests
         [InlineData("MT", 2)]
         [InlineData("SH", 3)]
         [InlineData("BC", 4)]
+        [InlineData("RU", 5)]
         public void DeckVersionIsTheMinimumLibraryVersionThatSupportsTheContainedFactions(string faction, int expectedVersion)
         {
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -504,17 +518,17 @@ namespace LoRDeckCodes_Tests
             Assert.Equal(expectedVersion, minSupportedLibraryVersion);
         }
 
+        [Fact]
+        public void ArgumentExceptionOnFutureVersion()
+        {
+            const string deckCodeWithVersion10 = "DEAAABABAEFACAIBAAAQCAIFAEAQGCTP";
+            Assert.Throws<ArgumentException>(() => LoRDeckEncoder.GetDeckFromCode(deckCodeWithVersion10));
+        }
+
         private static int ExtractVersionFromDeckCode(string deckCode)
         {
             byte[] bytes = Base32.Decode(deckCode);
             return bytes[0] & 0xF;
-        }
-
-        [Fact]
-        public void ArgumentExceptionOnFutureVersion()
-        {
-            const string singleCardDeckWithVersion5 = "CUAAAAIBAUAAC";
-            Assert.Throws<ArgumentException>(() => LoRDeckEncoder.GetDeckFromCode(singleCardDeckWithVersion5));
         }
 
         public bool VerifyRehydration(List<CardCodeAndCount> d, List<CardCodeAndCount> rehydratedList)
