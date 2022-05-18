@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-<PropertyGroup>
-    <Version>1.2.4</Version>
-</PropertyGroup>
+
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+    <Version>1.2.4</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net461</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
