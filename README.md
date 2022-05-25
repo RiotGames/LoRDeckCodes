@@ -92,7 +92,7 @@ Members of the community have graciously created implementations of this library
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 4 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 4 | SolitudeSF |
-| [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 4 | jcuker |
+| [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 5 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
 | [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
