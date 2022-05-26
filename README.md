@@ -93,7 +93,7 @@ Members of the community have graciously created implementations of this library
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 4 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 4 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 5 | jcuker |
-| [lordecks](https://github.com/pholzmgit/lordecks) | R | 4 | pholzmgit |
+| [lordecks](https://github.com/pholzmgit/lordecks) | R | 5 | pholzmgit |
 | [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
 | [runeterra-deck-code](https://github.com/Yutsa/runeterra-deck-code) | Java | 4 | Yutsa |
