@@ -90,7 +90,7 @@ Members of the community have graciously created implementations of this library
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
 | [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
 | [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
-| [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 4 | zofrex |
+| [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 5 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 5 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 5 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 5 | pholzmgit |
