@@ -84,7 +84,7 @@ Members of the community have graciously created implementations of this library
 | --------------------- | -------- | -------- | ---------- |
 | [R4J](https://github.com/stelar7/R4J) | Java 8 | 5 | stelar7 |
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 5 | Billzabob |
-| [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 4 | Rafalonso |
+| [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 5 | Rafalonso |
 | [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 3 | SwitchbladeBot |
 | [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
 | [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
