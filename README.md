@@ -85,19 +85,13 @@ Members of the community have graciously created implementations of this library
 | [R4J](https://github.com/stelar7/R4J) | Java 8 | 5 | stelar7 |
 | [ForDeckmacia](https://github.com/Billzabob/ForDeckmacia) | Scala | 5 | Billzabob |
 | [LoRDeckCodesPython](https://github.com/Rafalonso/LoRDeckCodesPython) | Python 3 | 5 | Rafalonso |
-| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 3 | SwitchbladeBot |
-| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
-| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
-| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
-| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
+| [runeterra](https://github.com/SwitchbladeBot/runeterra) | JavaScript | 5 | SwitchbladeBot |
 | [runeterra_cards](https://github.com/zofrex/runeterra_cards) | Ruby | 5 | zofrex |
 | [runeterra_decks](https://github.com/SolitudeSF/runeterra_decks) | Nim | 5 | SolitudeSF |
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 5 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 5 | pholzmgit |
-| [goterra](https://github.com/sousa-andre/goterra) | Golang | 4 | sousa-andre |
-| [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
-| [runeterra-deck-code](https://github.com/Yutsa/runeterra-deck-code) | Java | 4 | Yutsa |
 | [riot_lor](https://github.com/ed-flanagan/riot_lor) | Elixir | 5 | ed-flanagan |
+| [lor-deckcode-go](https://github.com/m0t0k1ch1/lor-deckcode-go) | Go | 5 | m0t0k1ch1 |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
 
@@ -105,10 +99,17 @@ Leading up to the release of a new version of the library, we'll keep the origin
 
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
+| [goterra](https://github.com/sousa-andre/goterra) | Go | 4 | sousa-andre |
+| [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
+| [runeterra-deck-code](https://github.com/Yutsa/runeterra-deck-code) | Java | 4 | Yutsa |
+| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Go | 4 | MarekSalgovic |
+| [RuneTerraPHP](https://github.com/mike-reinders/runeterra-php) | PHP 7.2 | 3 | Mike-Reinders |
+| [lordeckcodes-rs](https://github.com/iulianR/lordeckcodes-rs) | Rust | 3 | iulianR |
+| [LoRDeckCodes](https://github.com/Pole458/LoRDeckCodesAndroid) | Android | 3 | Pole |
+| [lor_deck_codes_dart](https://github.com/edenizk/lor_deck_codes_dart) | Dart | 3 | edenizk |
 | [LoRDeckCodes.jl](https://github.com/wookay/LoRDeckCodes.jl) | Julia | 3 | wookay |
 | [twisted_fate](https://github.com/snowcola/twisted_fate) | Python 3 | 2** | snowcola |
 | [lor_deckcodes_dart](https://github.com/exts/lor_deckcodes_dart) | Dart 2 | 2** | exts |
-| [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Golang | 2 | MarekSalgovic |
 | [lor-deckcode](https://github.com/icepeng/lor-deckcode) | TypeScript | 2 | icepeng |
 | [LoRDeck++](https://github.com/EvanKaraf/LoRDeckpp) | C++ | 2 | EvanKaraf |
 | [LorElixir](https://github.com/petter-kaspersen/lor-deck-codes-elixir) | Elixir | 1 | petter-kaspersen |
