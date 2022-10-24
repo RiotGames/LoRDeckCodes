@@ -92,6 +92,7 @@ Members of the community have graciously created implementations of this library
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 5 | pholzmgit |
 | [riot_lor](https://github.com/ed-flanagan/riot_lor) | Elixir | 5 | ed-flanagan |
 | [lor-deckcode-go](https://github.com/m0t0k1ch1/lor-deckcode-go) | Go | 5 | m0t0k1ch1 |
+| [Kunc.RiotGames.Lor.DeckCodes](https://github.com/AoshiW/Kunc.RiotGames) | C# | 5 | AoshiW |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
 
