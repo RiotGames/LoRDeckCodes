@@ -1,8 +1,10 @@
-﻿using System;
-using Xunit;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
+
+using Xunit;
+
 using LoRDeckCodes;
 
 namespace LoRDeckCodes_Tests
@@ -20,7 +22,7 @@ namespace LoRDeckCodes_Tests
             string line;
             using (StreamReader myReader = new StreamReader(GetTestDataFilePath()))
             {
-                while( (line = myReader.ReadLine()) != null)
+                while ((line = myReader.ReadLine()) != null)
                 {
                     codes.Add(line);
                     List<CardCodeAndCount> newDeck = new List<CardCodeAndCount>();
@@ -44,7 +46,7 @@ namespace LoRDeckCodes_Tests
                 Assert.True(VerifyRehydration(decks[i], decoded));
             }
         }
-        
+
         private static string GetTestDataFilePath()
         {
             string TestDataFileName = "DeckCodesTestData.txt";
@@ -270,18 +272,18 @@ namespace LoRDeckCodes_Tests
         }
 
         [Fact]
-         public void ShurimaSet()
-         {
-             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
-             deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
-             deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
-             deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
-             deck.Add(new CardCodeAndCount() { CardCode = "04SH047", Count = 5 });
-        
-             string code = LoRDeckEncoder.GetCodeFromDeck(deck);
-             List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
-             Assert.True(VerifyRehydration(deck, decoded));
-         }        
+        public void ShurimaSet()
+        {
+            List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
+            deck.Add(new CardCodeAndCount() { CardCode = "01DE002", Count = 4 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW003", Count = 2 });
+            deck.Add(new CardCodeAndCount() { CardCode = "02BW010", Count = 3 });
+            deck.Add(new CardCodeAndCount() { CardCode = "04SH047", Count = 5 });
+
+            string code = LoRDeckEncoder.GetCodeFromDeck(deck);
+            List<CardCodeAndCount> decoded = LoRDeckEncoder.GetDeckFromCode(code);
+            Assert.True(VerifyRehydration(deck, decoded));
+        }
 
         [Fact]
         public void MtTargonSet()
@@ -312,7 +314,8 @@ namespace LoRDeckCodes_Tests
         }
 
         [Fact]
-        public void BadVersion() {
+        public void BadVersion()
+        {
             // make sure that a deck with an invalid version fails
 
             List<CardCodeAndCount> deck = new List<CardCodeAndCount>();
@@ -449,7 +452,7 @@ namespace LoRDeckCodes_Tests
             string badEncodingNotBase32 = "I'm no card code!";
             string badEncoding32 = "ABCDEFG";
             string badEncodingEmpty = "";
-            
+
             bool failed = false;
             try
             {
@@ -552,6 +555,60 @@ namespace LoRDeckCodes_Tests
 
             }
             return true;
+        }
+
+        [Theory]
+        [MemberData(nameof(VarintValidSequences))]
+        public void VarintPopSuccessfully(List<byte> input, int expected)
+        {
+            var actual = VarintTranslator.PopVarint(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [MemberData(nameof(VarintValidSequences))]
+        public void VarintGetValid(List<byte> expectedList, ulong input)
+        {
+            var actual = VarintTranslator.GetVarint(input);
+            byte[] expected = expectedList.ToArray();
+            Assert.Equal(expected, actual);
+        }
+
+        public static IEnumerable<object[]> VarintValidSequences()
+        {
+            /*
+             * Examples sourced from:
+             * https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128
+             * https://developers.google.com/protocol-buffers/docs/encoding#varints
+             */
+            return new List<object[]>
+            {
+                new object[] { new List<byte>() { 0 }, 0 },
+                new object[] { new List<byte>() { 1 }, 1 },
+                new object[] { new List<byte>() { 127 }, 127 },
+                new object[] { new List<byte>() { 128, 1 }, 128 },
+                new object[] { new List<byte>() { 156, 1 }, 156 },
+                new object[] { new List<byte>() { 172, 2 }, 300 },
+                new object[] { new List<byte>() { 229, 142, 38 }, 624485 },
+
+            };
+        }
+
+        [Theory]
+        [MemberData(nameof(VarintInvalidSequences))]
+        public void VarintPopException(List<byte> input)
+        {
+            var ex = Assert.Throws<ArgumentException>(() => VarintTranslator.PopVarint(input));
+            Assert.Equal("Byte array did not contain valid varints.", ex.Message);
+        }
+
+        public static IEnumerable<object[]> VarintInvalidSequences()
+        {
+            return new List<object[]>
+            {
+                new object[] { new List<byte>() { 128 } },
+                new object[] { new List<byte>() { 128, 128 }}
+            };
         }
     }
 }
