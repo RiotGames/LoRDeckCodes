@@ -91,7 +91,7 @@ Members of the community have graciously created implementations of this library
 | [lor-deckcodes-ts](https://github.com/jcuker/lor-deckcode-ts) | TypeScript | 5 | jcuker |
 | [lordecks](https://github.com/pholzmgit/lordecks) | R | 5 | pholzmgit |
 | [riot_lor](https://github.com/ed-flanagan/riot_lor) | Elixir | 5 | ed-flanagan |
-| [lor-deckcode-go](https://github.com/m0t0k1ch1/lor-deckcode-go) | Go | 5 | m0t0k1ch1 |
+| [lor](https://github.com/m0t0k1ch1-go/lor) | Go | 5 | m0t0k1ch1 |
 | [LorDeckCodeCpp](https://github.com/Suolumi/LorDeckCodeCpp) | C++ | 5 | Suolumi |
 | [Kunc.RiotGames.Lor.DeckCodes](https://github.com/AoshiW/Kunc.RiotGames) | C# | 5 | AoshiW |
 | [patched-porobot](https://github.com/Steffo99/patched-porobot) | Rust | 5 | Steffo99 |
