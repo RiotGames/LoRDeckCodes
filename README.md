@@ -96,7 +96,7 @@ Members of the community have graciously created implementations of this library
 | [Kunc.RiotGames.Lor.DeckCodes](https://github.com/AoshiW/Kunc.RiotGames) | C# | 5 | AoshiW |
 | [patched-porobot](https://github.com/Steffo99/patched-porobot) | Rust | 5 | Steffo99 |
 | [Scuttlegeist](https://github.com/Petersil1998/Scuttlegeist) | Java | 5 | Petersil1998 |
-
+| [goterra](https://github.com/sousa-andre/goterra) | Go | 5 | sousa-andre |
 
 Leading up to the release of a new version of the library, we'll keep the original and new version in the **Current Version** section. A couple weeks after the release of a new version, any libraries that have not been updated to the latest version will be moved into the **Previous Versions** section. Any libraries in the **Previous Version** section that get updated to the latest version will get appended to the **Current Version** section.
 
@@ -104,7 +104,6 @@ Leading up to the release of a new version of the library, we'll keep the origin
 
 | Name                  | Language | Version* | Maintainer |
 | --------------------- | -------- | -------- | ---------- |
-| [goterra](https://github.com/sousa-andre/goterra) | Go | 4 | sousa-andre |
 | [lor-deckcodes](https://github.com/tomaszbak/lor-deckcodes) | Swift | 4 | tomaszbak |
 | [runeterra-deck-code](https://github.com/Yutsa/runeterra-deck-code) | Java | 4 | Yutsa |
 | [lordeckoder](https://github.com/MarekSalgovic/lordeckoder) | Go | 4 | MarekSalgovic |
